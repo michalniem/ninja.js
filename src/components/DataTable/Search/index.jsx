@@ -1,17 +1,14 @@
-import React from 'react'
-
-const Search = (props) => {
-  const { onSearch } = props
-
+function Index({ value, onSearch }) {
   return (
     <div className="p-b-1">
       <input
         type="search"
+        value={value}
         className="form-control"
         placeholder="Søg brugere"
-        onChange={onSearch.bind(this)} />
+        onChange={onSearch} />
     </div>
   )
 }
 
-export default Search
+export default Index
