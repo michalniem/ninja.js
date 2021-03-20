@@ -5,14 +5,22 @@ import PaginatedTable from '../PaginatedTable'
 import pickValues from '../../helpers/pickValues';
 import includesKeyword from '../../helpers/includesKeyword';
 import useInput from '../../hooks/useInput';
+import {User} from "../../shared/types/user";
 
-const SEARCH_BY = ['name1', 'email']
+const SEARCH_BY: string[] = ['name1', 'email']
 
-function DataTable({data, rowsPerPage}) {
+type Props = {
+    data: User[];
+    rowsPerPage: number
+}
+
+function DataTable({data, rowsPerPage}: Props) {
   const [keyword, onChange] = useInput();
 
   const filteredData =
-    data.filter((record) => pickValues(record, SEARCH_BY).some(value => includesKeyword(value, keyword)))
+    data.filter((record) => {
+        return pickValues(record, SEARCH_BY).some(value => includesKeyword(value, keyword));
+    })
 
   return (
     <div>
