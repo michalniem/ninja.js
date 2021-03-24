@@ -14,10 +14,10 @@ type Props = {
     rowsPerPage: number
 }
 
-function DataTable({data, rowsPerPage}: Props) {
+function DataTable({data, rowsPerPage}: Props): JSX.Element {
   const [keyword, onChange] = useInput();
 
-  const filteredData =
+  const filteredData: User[] =
     data.filter((record) => {
         return pickValues(record, SEARCH_BY).some(value => includesKeyword(value, keyword));
     })

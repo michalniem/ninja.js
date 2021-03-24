@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import {FormEvent, useState} from 'react';
 
 function useInput(initialValue = '') {
   const [value, setValue] = useState<string>(initialValue);
 
-  const onChange = (event) => {
-    setValue(event.target.value);
+  const onChange = (event: FormEvent<HTMLInputElement>): void => {
+    setValue(event.currentTarget.value);
   };
 
   const reset = () => {

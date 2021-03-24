@@ -1,6 +1,6 @@
 import {useState, useCallback} from 'react';
 
-function usePagination(data: object[], rowsPerPage: number) {
+function usePagination(data, rowsPerPage: number) {
     const [currentPage, setCurrentPage] = useState(0);
 
     const getRangeToShow = useCallback((): number[] => {

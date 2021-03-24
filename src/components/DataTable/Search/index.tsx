@@ -5,7 +5,7 @@ type Props = {
     onSearch: FormEventHandler
 }
 
-function Index({value, onSearch}: Props) {
+function Index({value, onSearch}: Props): JSX.Element {
     return (
         <div className="p-b-1">
             <input

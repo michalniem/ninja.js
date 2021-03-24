@@ -6,7 +6,7 @@ type Props = {
     rows: User[]
 }
 
-function App({rows}: Props) {
+function App({rows}: Props): JSX.Element {
     return (
         <div className="container mt-3">
             <DataTable data={rows} rowsPerPage={5}/>
